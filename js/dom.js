@@ -1,5 +1,5 @@
 let fetchRepos = async () => {
-    let fontEndProjects = [];
+    let frontEndProjects = [];
     let backEndProjects = [];
 
     let response = await fetch('https://api.github.com/users/vtrev/repos');
@@ -13,7 +13,6 @@ let fetchRepos = async () => {
                 backEndProjects.push({
                     'heading': repo.name,
                     'description': description.substr(0, description.length - 2)
-
                 })
             }
             if (descriptor == '.*') {
@@ -28,7 +27,7 @@ let fetchRepos = async () => {
     });
 
     return {
-        fontEndProjects,
+        frontEndProjects,
         backEndProjects
     }
 };
@@ -37,7 +36,7 @@ let fetchRepos = async () => {
 fetchRepos().then(
     (data) => {
         console.log('Done fetching repos..')
-        let frontEndList = data.fontEndProjects;
+        let frontEndList = data.frontEndProjects;
         let backEndList = data.backEndProjects;
         populateProjects(frontEndList, 'frontEnd');
         populateProjects(backEndList, 'backEnd');
