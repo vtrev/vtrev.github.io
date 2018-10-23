@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates" rel="stylesheet">
+    <link rel="stylesheet" href="./style/simple-grid.min.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+
+    <title>Vusi | Baloyi</title>
+    <!-- Handle bars template -->
+    <script type="text/x-template" id="projects-template">
+        {{#each projects}}
+        <div class="col-3">
+                <div class="card">
+                    <h4>{{this.heading}}</h4>
+                    <hr>
+                    <div class="card-text">
+                        <p>{{this.description}}</p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+    </script>
+</head>
+
+<body>
+    <nav>
+
+    </nav>
+
+    <div class="row section-one centext">
+        <div class="col-3">
+            <img src="./img/profile.png">
+        </div>
+        <div class="col-9">
+            <p>More pigeon pie, please. The bear and the maiden fair. Our Sun Shines Bright. The night is dark and full
+                of
+                terrors. It is rare to meet a Lannister who shares my enthusiasm for dead Lannisters. A forked purple
+                lightning bolt, on black field speckled with four-pointed stars. Dunc the Lunk, thick as a castle wall.
+                The
+                bear and the maiden fair.</p>
+        </div>
+    </div>
+
+    <div class="row section-two centext">
+        <div class="col-12 space">
+            <h3>Front-End Projects</h3>
+        </div>
+        <div id="front-end"></div>
+    </div>
+    <div class="row section-three centext">
+        <div class="col-12 space">
+            <h3>Back-End Projects</h3>
+        </div>
+        <div id="back-end"></div>
+    </div>
+
+
+    <footer class="row center">
+
+        <div class="col-7 tech">
+            <p>Technologies I can work with</p>
+            <hr>
+            <img src="./img/html.png" alt="">
+            <img src="./img/css.png" alt="">
+            <img src="./img/js.png" alt="">
+            <img src="./img/ndoe.png" alt="">
+            <img src="./img/hb.png" alt="">
+            <img src="./img/pg.png" alt="">
+            <img src="./img/mysql.png" alt="">
+            <img id="mocha" src="./img/mochachai.png" alt="">
+            <img id="express" src="./img/express.png" alt="">
+        </div>
+        <div class="col-5 contact">
+            <p>Contact</p>
+            <hr>
+            0735748294<br>
+            baloyi.trev@gmail.com
+        </div>
+    </footer>
+    <script src="./js/dom.js"></script>
+
+</body>
+
+</html>

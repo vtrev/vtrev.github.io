@@ -1,0 +1,99 @@
+/* Global styles */
+p {
+    font-family: 'Montserrat Alternates', sans-serif;
+
+}
+
+.centext {
+    text-align: center;
+}
+
+.space h3 {
+    /* border: 2px solid gray; */
+    text-transform: uppercase;
+    color: white;
+
+}
+
+/* navigation */
+nav {
+    background: black;
+    height: 80px;
+}
+
+/* section 1 */
+.section-one {
+    background: #FBFCFF;
+}
+
+.section-one img {
+    width: 50%;
+    /* height: 50%; */
+}
+
+.section-one p {
+    color: black;
+    font-size: 19px;
+    float: left;
+}
+
+/* section 2 */
+.section-two {
+    background: #F75C03;
+}
+
+/* section 3 */
+.section-three {
+    background: #2274A5;
+}
+
+
+/* card */
+.card {
+
+    height: 290px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    background: white;
+    border-radius: 5px;
+    border: 2px solid gray;
+
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.9);
+}
+
+.card-text {
+    padding: 2px 16px;
+
+}
+
+.card-text p,
+.card h4 {
+    /* font-size: 15px; */
+    color: black;
+}
+
+
+/* footer */
+footer {
+    height: 500px;
+    background: black;
+    color: white;
+
+}
+
+.tech img {
+    margin: 10px;
+    float: left;
+    width: 70px;
+    height: 70px;
+    /* background: white; */
+}
+
+#mocha,
+#express {
+    height: 90px;
+    width: 200px;
+}
