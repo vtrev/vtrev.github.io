@@ -16,6 +16,30 @@ p {
     margin-bottom: 30px;
 }
 
+/* scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: gray;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+
 /* navigation */
 nav {
     background: black;
@@ -52,12 +76,14 @@ nav {
 /* card */
 .card {
 
-    height: 260px;
+    height: 290px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     background: white;
     border-radius: 5px;
     border: 2px solid gray;
+    overflow: auto;
+
 
 }
 
@@ -74,7 +100,6 @@ nav {
 .card h4 {
     font-size: 14px;
     color: black;
-    overflow: auto;
 
 }
 
