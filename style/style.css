@@ -109,7 +109,7 @@ nav {
 
 /* footer */
 footer {
-    height: 500px;
+    height: 680px;
     background: black;
     color: white;
 
@@ -133,4 +133,14 @@ footer {
 #express {
     height: 90px;
     width: 200px;
+}
+
+
+/* Media queries */
+@media only screen and (max-width:720px) {
+    .card {
+        width: 80%;
+        display: inline-block;
+    }
+
 }
