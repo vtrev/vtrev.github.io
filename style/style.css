@@ -16,6 +16,10 @@ p {
     margin-bottom: 30px;
 }
 
+.space hr {
+    width: 70%;
+}
+
 /* scrollbar */
 
 /* width */
@@ -62,15 +66,14 @@ nav {
     float: left;
 }
 
-/* section 2 */
-.section-two {
-    background: #F75C03;
+/* section 2 +3  */
+.section-two,
+.section-three {
+    background: darkcyan;
 }
 
-/* section 3 */
-.section-three {
-    background: #2274A5;
-}
+
+
 
 
 /* card */
