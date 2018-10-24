@@ -109,9 +109,16 @@ nav {
 
 /* footer */
 footer {
-    height: 680px;
     background: black;
     color: white;
+
+}
+
+.end {
+    position: relative;
+    bottom: 1px;
+    height: 100px;
+    background: black;
 
 }
 
