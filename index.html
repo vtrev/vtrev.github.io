@@ -16,13 +16,13 @@
     <script type="text/x-template" id="projects-template">
         {{#each projects}}
         <div class="col-3">
-                <div class="card">
+                {{#if this.link}}<a href={{this.link}} target="_blank">{{/if}}<div class="card">
                     <h4>{{this.heading}}</h4>
                     <hr>
                     <div class="card-text">
                         <p>{{this.description}}</p>
                     </div>
-                </div>
+                </div></a>
             </div>
             {{/each}}
     </script>
