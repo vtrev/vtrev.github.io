@@ -115,6 +115,12 @@ footer {
 
 }
 
+.contact a {
+    margin: 10px;
+    font-size: 25px;
+    text-decoration: none;
+}
+
 .tech img {
     margin: 10px;
     float: left;
