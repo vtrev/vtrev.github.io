@@ -1,4 +1,4 @@
-let fetchRepos = async () => {
+let makeRepos = async () => {
     let frontEndProjects = [];
     let backEndProjects = [];
     let herokuLinks = {
@@ -8,9 +8,10 @@ let fetchRepos = async () => {
         "registrations-webapp": "https://vtrev-registrations.herokuapp.com/",
         "greetings-webapp": "https://vtrev-greetings.herokuapp.com/"
     }
-
+    //fetch the repos from github
     let response = await fetch('https://api.github.com/users/vtrev/repos');
     let repos = await response.json();
+
     //seperate the repos into back and front-end
     repos.filter((repo) => {
         let description = repo.description;
@@ -49,9 +50,9 @@ let fetchRepos = async () => {
 };
 
 
-fetchRepos().then(
+makeRepos().then(
     (data) => {
-        console.log('Done fetching repos..');
+        console.log('Done making repos..');
         let frontEndList = data.frontEndProjects.reverse();
         let backEndList = data.backEndProjects.reverse();
         populateProjects(frontEndList, 'frontEnd');
