@@ -20,6 +20,10 @@ p {
     width: 70%;
 }
 
+.space p {
+    font-size: 14px;
+}
+
 /* scrollbar */
 
 /* width */
