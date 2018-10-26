@@ -60,14 +60,21 @@ nav {
 }
 
 .section-one img {
-    width: 50%;
-    /* height: 50%; */
+    width: 70%;
+    height: 100%;
+    border-radius: 10px;
 }
 
 .section-one p {
     color: black;
-    font-size: 19px;
-    float: left;
+    font-size: 11x;
+    float: right;
+    position: relative;
+    top: 10px;
+}
+
+.section-one h3 {
+    color: black;
 }
 
 /* section 2 +3  */
