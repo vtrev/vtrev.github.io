@@ -11,7 +11,7 @@
      let backEndProjects = [];
      let herokuLinks = {
          "waiters-app": "https://vtrev-waiters.herokuapp.com/",
-         "shoe_api": "https://vtrev-shoesapi.herokuapp.com/",
+         "shoe-store": "https://vtrev-shoesapi.herokuapp.com/",
          "settings-bill-expressjs": "https://vtrev-settings-bill.herokuapp.com/",
          "registrations-webapp": "https://vtrev-registrations.herokuapp.com/",
          "greetings-webapp": "https://vtrev-greetings.herokuapp.com/"

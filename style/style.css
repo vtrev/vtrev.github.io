@@ -147,10 +147,9 @@ footer {
     /* background: white; */
 }
 
-#mocha,
-#express {
-    height: 90px;
-    width: 200px;
+.tech .footer-big {
+    height: 60px;
+    width: 175px;
 }
 
 
