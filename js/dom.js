@@ -10,7 +10,7 @@
      let frontEndProjects = [];
      let backEndProjects = [];
      let herokuLinks = {
-         "waiters-app": "https://vtrev-waiters.herokuapp.com/",
+         "waiters-app": "https://vtrev-waiters.herokuapp.com/waiters/waiterNameHere",
          "shoe-store": "https://vtrev-shoesapi.herokuapp.com/",
          "settings-bill-expressjs": "https://vtrev-settings-bill.herokuapp.com/",
          "registrations-webapp": "https://vtrev-registrations.herokuapp.com/",

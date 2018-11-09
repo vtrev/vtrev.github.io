@@ -50,8 +50,8 @@ p {
 
 /* navigation */
 nav {
-    background: black;
-    height: 80px;
+    background: darkcyan;
+    height: 30px;
 }
 
 /* section 1 */
@@ -70,7 +70,7 @@ nav {
     font-size: 11x;
     float: right;
     position: relative;
-    top: 10px;
+    top: 40px;
 }
 
 .section-one h3 {
