@@ -152,6 +152,10 @@ footer {
     width: 175px;
 }
 
+.tech .footer-med {
+    height: 60px;
+}
+
 
 /* Media queries */
 @media only screen and (max-width:720px) {
