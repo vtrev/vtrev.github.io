@@ -1,6 +1,6 @@
 /* Global styles */
 p {
-    font-family: 'Montserrat Alternates', sans-serif;
+    /* font-family: 'Montserrat Alternates', sans-serif; */
 
 }
 
@@ -60,17 +60,13 @@ nav {
 }
 
 .section-one img {
-    width: 70%;
+    width: 50%;
     height: 100%;
     border-radius: 10px;
 }
 
 .section-one p {
     color: black;
-    font-size: 11x;
-    float: right;
-    position: relative;
-    /* top: 40px; */
 }
 
 .section-one h3 {
