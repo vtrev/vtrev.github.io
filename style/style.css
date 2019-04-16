@@ -3,10 +3,11 @@
     height: 50px;
 }
 
-p {
-    font-family: 'Montserrat Alternates', sans-serif;
-
+p,
+h5 {
+    font-family: 'Montserrat', sans-serif;
 }
+
 
 .centext {
     text-align: center;
@@ -68,11 +69,9 @@ nav {
     border-radius: 50%;
 }
 
-/* .section-one p {
-    color: black;
-    position: absolute;
-    bottom: 0;
-} */
+.section-one p {
+    font-size: 16px;
+}
 
 .top-p {
     position: relative;
