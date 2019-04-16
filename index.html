@@ -5,15 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+        integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates" rel="stylesheet">
-    <link rel="stylesheet" href="./style/simple-grid.min.css">
+    <link rel="stylesheet" href="./style/mat.css">
     <link rel="stylesheet" href="./style/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-
     <title>Vusi | Baloyi</title>
-    <!-- Handle bars template -->
+
+    <!-- Handle bars templates -->
+
+    <script type="text/x-template" id="footer-tech-template">
+        {{#each techList}}
+        <a class="carousel-item"><img src="./img/{{this}}.png"></a>
+        {{/each}}
+    </script>
+
+
+
     <script type="text/x-template" id="projects-template">
         {{#each projects}}
         <div class="col-3">
@@ -27,33 +36,33 @@
             </div>
             {{/each}}
     </script>
+
+
+
 </head>
 
 <body>
-    <!-- Add navigation menu later on, currently busy -->
-    <nav>
-    </nav>
-
-    <div class="row section-one centext">
-        <div class="col-3">
-            <img src="./img/profile.png">
-            
-
-        </div>
-        <div class="col-9">
-            <br><br>
-            <p> Hi there! I am Vusi, a full-stack web-developer. I am very curious with
-                regards to technology and I try to follow modern tech trends and developments. I am always ready and
-                enjoy learning things that I do not know yet in the software indusrty. My skills include Database
-                design and implementation, creating web-apps from ground up including the use of REST Apis. I care
-                about both the functionality and look of a product. I have also been exposed to OOP(Java) and
-                testing (see footer for
-                skills list). You can find some of the projects I have done below,this page is also one of them.</p>
+    <div class="spacer"></div>
+    <div class="container">
+        <div class="row section-one ">
+            <div class="col s12 m4 l4">
+                <img src="./img/profile.png">
+            </div>
+            <div class="col s12 m8 l8  top-p">
+                <br><br>
+                <p> Hello world! I am Vusi, a full-stack software developer with comprehensive skills when it comes to
+                    Information Systems. I enjoy solving user related problems and working with clients while taking a
+                    break from programming.
+                    I am always ready and
+                    enjoy learning things that I do not know yet especially in the software indusrty.
+                    <br>
+                    Below are some of the projects I have worked on and more details about me!
+                </p>
+            </div>
         </div>
     </div>
 
-
-    <div class="row section-three centext">
+    <!-- <div class="row section-three centext">
         <div class="col-12 space">
 
             <h3>Back-End Projects</h3>
@@ -68,45 +77,37 @@
             <h3>Front-End Projects</h3>
         </div>
         <div id="front-end"></div>
-    </div>
+    </div> -->
 
 
-    <footer class="row center">
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m7 l7 tech center">
+                    <h5>Technologies I can work with</h5>
+                    <hr>
+                    <div id="footer-carousel" class="carousel">
 
-        <div class="col-7 tech">
-            <p>Technologies I can work with</p>
-            <hr>
-            <img src="./img/html.png" alt="">
-            <img src="./img/css.png" alt="">
-            <img src="./img/js.png" alt="">
-            <img src="./img/ndoe.png" alt="">
-            <img src="./img/hb.png" alt="">
-            <img src="./img/pg.png" alt="">
-            <img src="./img/mysql.png" alt="">
-            <img src="./img/mocha.png" alt="">
-            <br>
-            <img class="footer-big" src="./img/travis.jpg" alt="">
-            <img class="footer-big" src="./img/heroku.png" alt="">
-            <img class="footer-big" src="./img/git.png" alt="">
-            <img class="footer-med" src="./img/rest.png" alt="">
-
-
+                    </div>
+                </div>
+                <div class="col s12 m5 l5 contact center">
+                    <h5>Contact</h5>
+                    <hr>
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+27735748294">0735748294</a>
+                    <br><br>
+                    <a href="mailto:baloyi.trev@gmail.com" target="_top"><i class="fas fa-at"></i></a>
+                    <a href="https://github.com/vtrev" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://twitter.com/vusi_trev" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/vusi-baloyi-733b05172/" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
         </div>
-        <div class="col-5 contact">
-            <p>Contact</p>
-            <hr>
-            <i class="fas fa-phone"></i>
-            <a href="tel:+27735748294">0735748294</a>
-            <br><br>
-            <a href="mailto:baloyi.trev@gmail.com" target="_top"><i class="fas fa-at"></i></a>
-            <a href="https://github.com/vtrev" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://twitter.com/vusi_trev" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.linkedin.com/in/vusi-baloyi-733b05172/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        </div>
-
     </footer>
-    <div class="end"></div>
+    <!-- <div class="end"></div> -->
     <script src="./js/dom.js"></script>
+    <script src="./js/mat.js"></script>
 
 </body>
 

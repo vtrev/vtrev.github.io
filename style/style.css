@@ -1,6 +1,10 @@
 /* Global styles */
+.spacer {
+    height: 50px;
+}
+
 p {
-    /* font-family: 'Montserrat Alternates', sans-serif; */
+    font-family: 'Montserrat Alternates', sans-serif;
 
 }
 
@@ -60,13 +64,18 @@ nav {
 }
 
 .section-one img {
-    width: 50%;
-    height: 100%;
-    border-radius: 10px;
+    height: 200px;
+    border-radius: 50%;
 }
 
-.section-one p {
+/* .section-one p {
     color: black;
+    position: absolute;
+    bottom: 0;
+} */
+
+.top-p {
+    position: relative;
 }
 
 .section-one h3 {
@@ -83,42 +92,14 @@ nav {
 
 
 
-/* card */
-.card {
-
-    height: 290px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
-    background: white;
-    border-radius: 5px;
-    border: 2px solid gray;
-    overflow: auto;
-
-
-}
-
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.9);
-}
-
-.card-text {
-    padding: 2px 16px;
-
-}
-
-.card-text p,
-.card h4 {
-    font-size: 14px;
-    color: black;
-
-}
-
-
 /* footer */
+footer .carousel {
+    height: 250px;
+}
+
 footer {
     background: black;
     color: white;
-
 }
 
 .end {
@@ -133,32 +114,9 @@ footer {
     margin: 10px;
     font-size: 25px;
     text-decoration: none;
+    color: white;
 }
 
 .tech img {
-    margin: 10px;
-    float: left;
-    width: 70px;
-    height: 70px;
-    /* background: white; */
-}
-
-.tech .footer-big {
-    height: 60px;
-    width: 175px;
-}
-
-.tech .footer-med {
-    height: 60px;
-
-}
-
-
-/* Media queries */
-@media only screen and (max-width:720px) {
-    .card {
-        width: 80%;
-        display: inline-block;
-    }
-
+    max-height: 110px;
 }
