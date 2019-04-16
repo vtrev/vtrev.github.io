@@ -21,20 +21,17 @@
         {{/each}}
     </script>
 
-
-
     <script type="text/x-template" id="projects-template">
         {{#each projects}}
-        <div class="col-3">
-                {{#if this.link}}<a href={{this.link}} target="_blank">{{/if}}<div class="card">
-                    <h4>{{this.heading}}</h4>
-                    <hr>
-                    <div class="card-text">
-                        <p>{{this.description}}</p>
-                    </div>
-                </div></a>
-            </div>
-            {{/each}}
+        <div class="col m3 l3">
+            <ul class="collapsible">
+                    <li>
+                        <div class="collapsible-header">{{this.heading}}</div>
+                        <div class="collapsible-body"><span>{{this.description}}</span></div>
+                    </li>
+                </ul>
+        </div>
+        {{/each}}
     </script>
 
 
@@ -43,23 +40,38 @@
 
 <body>
     <div class="spacer"></div>
-    <div class="container">
-        <div class="row section-one ">
-            <div class="col s12 m4 l4">
-                <img src="./img/profile.png">
-            </div>
-            <div class="col s12 m8 l8  top-p">
-                <p> Hello world! I am Vusi, a full-stack software developer with comprehensive skills when it comes to
-                    Information Systems. I enjoy solving user related problems and working with clients while taking a
-                    break from programming.
-                    I am always ready and
-                    enjoy learning things that I do not know yet especially in the software indusrty.
-                    <br>
-                    Below are some of the projects I have worked on and more details about me!
-                </p>
+    <section>
+        <div class="container">
+            <div class="row section-one">
+                <div class="col s12 m4 l4">
+                    <img src="./img/profile.png">
+                </div>
+                <div class="col s12 m8 l8  top-p">
+                    <p> Hello world! I am Vusi, a full-stack software developer with comprehensive skills when it comes
+                        to
+                        Information Systems. I enjoy solving user related problems and working with clients while taking
+                        a
+                        break from programming.
+                        I am always ready and
+                        enjoy learning things that I do not know yet especially in the software indusrty.
+                        <br>
+                        Below are some of the projects I have worked on and more details about me!
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section class="">
+        <div class="container">
+            <div class="row" id="projects">
+
+            </div>
+        </div>
+
+
+    </section>
+
     <footer>
         <div class="container">
             <div class="row">

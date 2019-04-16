@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     // handlebars to compile before carousel init
+
     let generateFooterSliderContent = function (techList) {
         let footerCarouselElement = document.getElementById("footer-carousel");
         let footerTechTemplateSource = document.getElementById("footer-tech-template").innerHTML;
@@ -8,10 +9,23 @@ document.addEventListener('DOMContentLoaded', function () {
         footerCarouselElement.innerHTML = footerTechTemplate(techList);
     };
     let techList = ['css', 'express', 'git', 'hb', 'heroku', 'html', 'js', 'mocha', 'mysql', 'nodejs', 'pg', 'rest', 'travis'];
+    let populateProjects = (projects) => {
+
+        let projectsData = {
+            projects
+        };
+        let projectsElement = document.getElementById("projects");
+        let projectsTemplateSource = document.getElementById("projects-template").innerHTML;
+        let projectsTemplate = Handlebars.compile(projectsTemplateSource);
+        let projectsHTML = projectsTemplate(projectsData);
+        projectsElement.innerHTML = projectsHTML;
+    }
 
     generateFooterSliderContent({
         techList
     });
+
+    // materialize css
 
     // footer carousel
     var elems = document.querySelector('#footer-carousel');
@@ -86,41 +100,19 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    // hadnlebars  
-    let populateProjects = (projects, type) => {
+    fetchRepos()
+        .then((response) => {
+            return makeRepos(response);
+        })
+        .then(
+            (data) => {
+                let projectList = data.backEndProjects.reverse();
+                populateProjects(projectList);
+                //initialize collapsible at the end
+                let elems = document.querySelectorAll('.collapsible');
+                let instances = M.Collapsible.init(elems, {});
 
-        let projectsData = {
-            projects
-        };
-
-        let frontEndElement = document.getElementById("front-end");
-        let backEndElement = document.getElementById("back-end")
-        let projectsTemplateSource = document.getElementById("projects-template").innerHTML;
-        let projectsTemplate = Handlebars.compile(projectsTemplateSource);
-        let projectsHTML = projectsTemplate(projectsData);
-        if (type == 'frontEnd') {
-            frontEndElement.innerHTML = projectsHTML;
-        }
-        if (type == 'backEnd') {
-            backEndElement.innerHTML = projectsHTML;
-        }
-    }
-
-
-
-
-
-    // fetchRepos()
-    //     .then((response) => {
-    //         return makeRepos(response);
-    //     })
-    //     .then(
-    //         (data) => {
-    //             let frontEndList = data.frontEndProjects.reverse();
-    //             let backEndList = data.backEndProjects.reverse();
-    //             populateProjects(frontEndList, 'frontEnd');
-    //             populateProjects(backEndList, 'backEnd');
-    //         }
-    //     );
+            }
+        );
 
 });
