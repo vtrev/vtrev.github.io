@@ -47,15 +47,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // =========================================== non materialize js ===================================================== //
     //fetch the repos from github
     let fetchRepos = async () => {
-        let response = await fetch('https://api.github.com/users/vtrev/repos');
+        let response = await fetch('https://api.github.com/users/vtrev/repos?per_page=100');
         let repos = await response.json();
         return repos
     };
 
     //sort them out and take only the data needed
     let makeRepos = async (repos) => {
-        let frontEndProjects = [];
-        let backEndProjects = [];
+        let projects = [];
         let herokuLinks = {
             "waiters-app": "https://vtrev-waiters.herokuapp.com/waiters/waiterNameHere",
             "shoe-store": "https://vtrev-shoesapi.herokuapp.com/",
@@ -69,34 +68,35 @@ document.addEventListener('DOMContentLoaded', function () {
             if (description) {
                 let tmpRepo = {
                     'heading': repo.name,
-                    'description': description.substr(0, description.length - 2)
+                    'description': description.substr(0, description.length - 3),
+                    'source': repo.html_url
                 }
-                let descriptor = description.slice(-2);
-                if (descriptor == '**') {
+                let descriptor = description.slice(-3);
+
+                if (descriptor == '***') {
+
+                    if (repo.name === "vtrev.github.io") {
+                        tmpRepo.link = "https://vusibaloyi.xyz";
+                        projects.push(tmpRepo);
+                    }
+                    if (repo.default_branch == "gh-pages") {
+                        tmpRepo.link = `https://vusibaloyi.xyz/${repo.name}`;
+                        projects.push(tmpRepo);
+
+                    }
                     let herokuKeys = Object.keys(herokuLinks);
                     herokuKeys.filter((repoName) => {
                         if (repoName == repo.name) {
                             tmpRepo.link = herokuLinks[repoName];
-                            backEndProjects.push(tmpRepo);
+                            projects.push(tmpRepo);
                         }
                     });
-                };
-                if (descriptor == '.*') {
-                    let tmpRepo = {
-                        'heading': repo.name,
-                        'description': description.substr(0, description.length - 1)
-                    };
-                    if (repo.default_branch == "gh-pages") {
-                        tmpRepo.link = `https://vusibaloyi.xyz/${repo.name}`
-                    }
-                    frontEndProjects.push(tmpRepo)
                 };
             };
 
         });
         return {
-            frontEndProjects,
-            backEndProjects
+            projects
         }
     };
 
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .then(
             (data) => {
-                let projectList = data.backEndProjects.reverse();
+                let projectList = data.projects.reverse();
                 populateProjects(projectList);
                 //initialize collapsible at the end
                 let elems = document.querySelectorAll('.collapsible');

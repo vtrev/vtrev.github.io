@@ -23,30 +23,32 @@
 
     <script type="text/x-template" id="projects-template">
         {{#each projects}}
-        <div class="col m3 l3">
+        <div class="col s12 m4 l4">
             <ul class="collapsible">
                     <li>
                         <div class="collapsible-header">{{this.heading}}</div>
-                        <div class="collapsible-body"><span>{{this.description}}</span></div>
+                        <div class="collapsible-body"><span>{{this.description}}
+                            <br><br> <a  class="left" target="_blank" href="{{this.link}}"><i class="fas fa-link"></i></a>
+                            <a class="right" target="_blank" href="{{this.source}}"><i class="far fa-file-code"></i></a>
+                        </span></div>
+
                     </li>
                 </ul>
         </div>
         {{/each}}
     </script>
-
-
-
 </head>
 
 <body>
-    <div class="spacer"></div>
-    <section>
+    <section class="top-section">
         <div class="container">
-            <div class="row section-one">
+            <div class="row section-one center">
+                <div class="spacer"></div>
                 <div class="col s12 m4 l4">
-                    <img src="./img/profile.png">
+                    <img class="" src="./img/profile.png">
                 </div>
                 <div class="col s12 m8 l8  top-p">
+                    <br>
                     <p> Hello world! I am Vusi, a full-stack software developer with comprehensive skills when it comes
                         to
                         Information Systems. I enjoy solving user related problems and working with clients while taking
@@ -61,11 +63,15 @@
             </div>
         </div>
     </section>
-
-    <section class="">
+    <br>
+    <hr class="projects">
+    <div class="row center">
+        <h5>Projects</h5>
+    </div>
+    <section class="projects-section">
         <div class="container">
             <div class="row" id="projects">
-
+                <!-- projectcs will be created dynamically from github api and will be templated using handlebars here -->
             </div>
         </div>
 
@@ -79,7 +85,7 @@
                     <h5>Technologies I can work with</h5>
                     <hr>
                     <div id="footer-carousel" class="carousel">
-
+                        <!-- Carousel items templated by handlebars sit here -->
                     </div>
                 </div>
                 <div class="col s12 m5 l5 contact center">
@@ -97,15 +103,9 @@
             </div>
         </div>
     </footer>
-    <div class="row center">
-        <h4 style="color:red">Please note that this site is currently under construction</h4>
 
-
-    </div>
-    <!-- <div class="end"></div> -->
     <script src="./js/dom.js"></script>
     <script src="./js/mat.js"></script>
-
 </body>
 
 </html>

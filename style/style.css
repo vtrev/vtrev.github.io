@@ -51,7 +51,31 @@ h5 {
     background: #555;
 }
 
+/* ============================================ projects ============================================================== */
 
+.collapsible i {
+    font-size: 22px;
+}
+
+hr.projects {
+    height: 30px;
+    border-style: solid;
+    border-color: #8c8b8b;
+    border-width: 2px 0 0 0;
+    border-radius: 20px;
+    width: 75%;
+}
+
+hr.projects:before {
+    display: block;
+    content: "";
+    height: 30px;
+    /* margin-top: -31px; */
+    /* border-style: solid; */
+    border-color: #8c8b8b;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
 
 /* navigation */
 nav {
@@ -61,12 +85,13 @@ nav {
 
 /* section 1 */
 .section-one {
-    background: #FBFCFF;
+    /* background: #FBFCFF; */
 }
 
 .section-one img {
     height: 200px;
-    border-radius: 50%;
+    border-radius: 10px;
+
 }
 
 .section-one p {
@@ -75,6 +100,7 @@ nav {
 
 .top-p {
     position: relative;
+    text-align: left;
 }
 
 .section-one h3 {
@@ -88,17 +114,19 @@ nav {
 }
 
 
-
-
+/*=========================================== Projects ==================================================================*/
 
 /* footer */
 footer .carousel {
     height: 250px;
 }
 
-footer {
+
+
+footer,
+footer a {
     background: black;
-    color: white;
+    color: whitesmoke;
 }
 
 .end {
@@ -113,7 +141,7 @@ footer {
     margin: 10px;
     font-size: 25px;
     text-decoration: none;
-    color: white;
+    color: whitesmoke;
 }
 
 .tech img {
