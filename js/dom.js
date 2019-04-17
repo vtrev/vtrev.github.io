@@ -64,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         //seperate the repos into back and front-end
         repos.filter((repo) => {
+            console.log(repo)
             let description = repo.description;
             if (description) {
                 let tmpRepo = {
@@ -72,17 +73,16 @@ document.addEventListener('DOMContentLoaded', function () {
                     'source': repo.html_url
                 }
                 let descriptor = description.slice(-3);
-
+                console.log(descriptor);
                 if (descriptor == '***') {
-
                     if (repo.name === "vtrev.github.io") {
                         tmpRepo.link = "https://vusibaloyi.xyz";
                         projects.push(tmpRepo);
+                        return;
                     }
                     if (repo.default_branch == "gh-pages") {
                         tmpRepo.link = `https://vusibaloyi.xyz/${repo.name}`;
                         projects.push(tmpRepo);
-
                     }
                     let herokuKeys = Object.keys(herokuLinks);
                     herokuKeys.filter((repoName) => {
@@ -91,7 +91,12 @@ document.addEventListener('DOMContentLoaded', function () {
                             projects.push(tmpRepo);
                         }
                     });
-                };
+                }
+                if (descriptor === "*_*") {
+                    console.log()
+                    tmpRepo.link = "#";
+                    projects.push(tmpRepo);
+                }
             };
 
         });
