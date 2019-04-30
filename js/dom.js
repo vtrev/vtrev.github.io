@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
         instance.next();
         setTimeout(slideFooterCarousel, 2000);
     }
-    slideFooterCarousel();
+    // slideFooterCarousel();
 
     // =========================================== non materialize js ===================================================== //
     //fetch the repos from github
