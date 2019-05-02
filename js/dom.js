@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
         let footerTechTemplate = Handlebars.compile(footerTechTemplateSource);
         footerCarouselElement.innerHTML = footerTechTemplate(techList);
     };
-    let techList = ['css', 'express', 'git', 'hb', 'heroku', 'html', 'js', 'mocha', 'mysql', 'nodejs', 'pg', 'rest', 'travis'];
+    // let techList = ['css', 'express', 'git', 'hb', 'heroku', 'html', 'js', 'mocha', 'mysql', 'nodejs', 'pg', 'rest', 'travis'];
+    let techList = ['heroku', 'css', 'express', 'git', 'travis'];
     let populateProjects = (projects) => {
 
         let projectsData = {
@@ -42,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
         instance.next();
         setTimeout(slideFooterCarousel, 2000);
     }
-    // slideFooterCarousel();
+    slideFooterCarousel();
 
     // =========================================== non materialize js ===================================================== //
     //fetch the repos from github
