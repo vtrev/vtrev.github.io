@@ -1,10 +1,19 @@
 /* Global styles */
+body {
+    background-color: whitesmoke;
+}
+
+.collapsible-body {
+    background-color: white;
+}
+
 .spacer {
     height: 50px;
 }
 
 p,
-h5 {
+h5,
+h4 {
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -50,6 +59,7 @@ h5 {
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+
 
 /* ============================================ projects ============================================================== */
 

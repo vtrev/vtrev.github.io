@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
         let footerTechTemplate = Handlebars.compile(footerTechTemplateSource);
         footerCarouselElement.innerHTML = footerTechTemplate(techList);
     };
-    // let techList = ['css', 'express', 'git', 'hb', 'heroku', 'html', 'js', 'mocha', 'mysql', 'nodejs', 'pg', 'rest', 'travis'];
-    let techList = ['heroku', 'css', 'express', 'git', 'travis'];
+    let techList = ["htmlcssjs", 'express', 'git', 'hb', 'heroku', "linux", 'nodejs', 'pg', 'rest', 'travis'];
+    // let techList = ['heroku', 'css', 'express', 'git', 'travis', 'pg'];
     let populateProjects = (projects) => {
 
         let projectsData = {
@@ -65,7 +65,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         //seperate the repos into back and front-end
         repos.filter((repo) => {
-            console.log(repo)
             let description = repo.description;
             if (description) {
                 let tmpRepo = {
@@ -74,7 +73,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     'source': repo.html_url
                 }
                 let descriptor = description.slice(-3);
-                console.log(descriptor);
                 if (descriptor == '***') {
                     if (repo.name === "vtrev.github.io") {
                         tmpRepo.link = "https://vusibaloyi.xyz";
@@ -94,7 +92,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     });
                 }
                 if (descriptor === "*_*") {
-                    console.log()
                     tmpRepo.link = "#";
                     projects.push(tmpRepo);
                 }
