@@ -63,6 +63,30 @@ h4 {
 
 /* ============================================ projects ============================================================== */
 
+
+.card .card-content{
+    background-color: white;
+}
+.card .card-action i{
+    color: aliceblue;
+    font-size: 18px;
+}
+
+.card .card-action i:hover{
+    color: darkslategray;;
+}
+
+
+.card .card-action{
+    min-height: 50px;
+    background-color: gray;
+}
+.card .card-title {
+    font-size: 24px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
 .collapsible i {
     font-size: 22px;
 }
@@ -80,8 +104,6 @@ hr.projects:before {
     display: block;
     content: "";
     height: 30px;
-    /* margin-top: -31px; */
-    /* border-style: solid; */
     border-color: #8c8b8b;
     border-width: 0 0 1px 0;
     border-radius: 20px;
