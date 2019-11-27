@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let techList = ["htmlcssjs", 'express', 'git', 'hb', 'heroku', "linux", 'nodejs', 'pg', 'rest', 'travis'];
     // let techList = ['heroku', 'css', 'express', 'git', 'travis', 'pg'];
     let populateProjects = (projects) => {
-
         let projectsData = {
             projects
         };
