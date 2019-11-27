@@ -74,12 +74,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 let descriptor = description.slice(-3);
                 if (descriptor == '***') {
                     if (repo.name === "vtrev.github.io") {
-                        tmpRepo.link = "https://vusibaloyi.xyz";
+                        tmpRepo.link = "https://vtrev.github.io";
                         projects.push(tmpRepo);
                         return;
                     }
                     if (repo.default_branch == "gh-pages") {
-                        tmpRepo.link = `https://vusibaloyi.xyz/${repo.name}`;
+                        tmpRepo.link = `https://vtrev.github.io/${repo.name}`;
                         projects.push(tmpRepo);
                     }
                     let herokuKeys = Object.keys(herokuLinks);
