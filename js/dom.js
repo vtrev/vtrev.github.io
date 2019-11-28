@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    // handlebars to compile before carousel init
+    // handlebars js to compile before carousel init
 
     let generateFooterSliderContent = function (techList) {
         let footerCarouselElement = document.getElementById("footer-carousel");
@@ -25,7 +25,12 @@ document.addEventListener('DOMContentLoaded', function () {
         techList
     });
 
-    // materialize css
+    // materialize js
+
+    //tooltips
+
+    
+
 
     // footer carousel
     var elems = document.querySelector('#footer-carousel');
@@ -44,16 +49,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     slideFooterCarousel();
 
-    // =========================================== non materialize js ===================================================== //
-    //fetch the repos from github
+    //  non materialize js
+    
+    
+    //code that pulls repos from github
     let fetchRepos = async () => {
         let response = await fetch('https://api.github.com/users/vtrev/repos?per_page=100');
         let repos = await response.json();
-        return repos
+        return repos;
     };
-
-    //sort them out and take only the data needed
-    let makeRepos = async (repos) => {
+    //filter out unwanted data and repos
+    let filterRepos = async (repos) => {
         let projects = [];
         let herokuLinks = {
             "waiters-app": "https://vtrev-waiters.herokuapp.com/waiters/waiterNameHere",
@@ -62,59 +68,68 @@ document.addEventListener('DOMContentLoaded', function () {
             "registrations-webapp": "https://vtrev-registrations.herokuapp.com/",
             "greetings-webapp": "https://vtrev-greetings.herokuapp.com/"
         }
-        //seperate the repos into back and front-end
+
         repos.filter((repo) => {
             let description = repo.description;
             if (description) {
                 let tmpRepo = {
                     'heading': repo.name,
                     'description': description.substr(0, description.length - 3),
-                    'source': repo.html_url
-                }
+                    'source': repo.html_url,
+                    'hosted' :false
+                    }
                 let descriptor = description.slice(-3);
-                if (descriptor == '***') {
+                console.log(repo.description,descriptor)
+                if (descriptor == "***") {
+                    
                     if (repo.name === "vtrev.github.io") {
                         tmpRepo.link = "https://vtrev.github.io";
                         projects.push(tmpRepo);
                         return;
                     }
+                    //create links for the repos on gh-pages
                     if (repo.default_branch == "gh-pages") {
                         tmpRepo.link = `https://vtrev.github.io/${repo.name}`;
+                        tmpRepo.hosted = true;
                         projects.push(tmpRepo);
+                        
                     }
+                    // create links for projects on Heroku
                     let herokuKeys = Object.keys(herokuLinks);
                     herokuKeys.filter((repoName) => {
                         if (repoName == repo.name) {
                             tmpRepo.link = herokuLinks[repoName];
+                            tmpRepo.hosted = true;
                             projects.push(tmpRepo);
                         }
                     });
                 }
                 if (descriptor === "*_*") {
-                    tmpRepo.link = "#";
                     projects.push(tmpRepo);
                 }
             };
-
         });
         return {
             projects
         }
     };
 
+    
     fetchRepos()
-        .then((response) => {
-            return makeRepos(response);
+        .then((response) => {  
+            return filterRepos(response);
         })
         .then(
             (data) => {
                 let projectList = data.projects.reverse();
                 populateProjects(projectList);
-                //initialize collapsible at the end
-                let elems = document.querySelectorAll('.collapsible');
-                let instances = M.Collapsible.init(elems, {});
-
+                //initialize tooltips js after html has been injected
+                var tooltipElems = document.querySelectorAll('.tooltipped');
+                var instances = M.Tooltip.init(tooltipElems,{
+                    margin:15,
+                    outDuration:0,
+                    transitionMovement:0
+            } );
             }
         );
-
 });

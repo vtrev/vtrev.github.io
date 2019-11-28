@@ -1,11 +1,9 @@
 /* Global styles */
-body {
-    /* background-color: white; */
-}
 
+/* 
 .collapsible-body {
     background-color: white;
-}
+} */
 
 .spacer {
     height: 50px;
@@ -60,6 +58,11 @@ h4 {
     background: #555;
 }
 
+
+.material-tooltip{
+    background-color: rgba(0,0,0,0.6)!important;
+    /* opacity: 0.1; */
+}
 
 /* ============================================ projects ============================================================== */
 
@@ -128,10 +131,7 @@ nav {
     height: 30px;
 }
 
-/* section 1 */
-.section-one {
-    /* background: #FBFCFF; */
-}
+
 
 .section-one img {
     height: 200px;
@@ -158,7 +158,9 @@ nav {
     background: darkcyan;
 }
 
-
+/* .tooltipped{
+    z-index: 99;
+} */
 /*=========================================== Footer ==================================================================*/
 
 /* footer */
@@ -198,20 +200,28 @@ footer a {
 
 /* Social icons */
 
-.fa-twitter{
+.fa-twitter:hover{
     color: rgb(29, 161, 242);
 }
 
-.fa-linkedin{
+.fa-linkedin:hover{
     color: rgb(14, 118, 168);
 }
 
-/* .fa-at{
+.fa-at:hover{
     color: rgb(212, 70, 56);
-} */
+}
 
-.fa-whatsapp{
+.fa-whatsapp:hover{
     color: rgb(37,211,102);
+}
+
+.fa-ban:hover{
+    color: red !important;
+}
+
+.fa-link:hover,.fa-file-code:hover{
+    color: blue !important;
 }
 
 

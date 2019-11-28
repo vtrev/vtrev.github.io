@@ -30,8 +30,18 @@
                           <p class="card-text">{{this.description}}</p>
                         </div>
                         <div class="card-action">
-                                <a  class="left" target="_blank" href="{{this.link}}"><i class="fas fa-link"></i></a>
-                                <a class="right" target="_blank" href="{{this.source}}"><i class="far fa-file-code"></i></a>
+                            {{#if this.hosted}}     
+                            <a  class="left tooltipped" target="_blank" href="{{this.link}}" data-position="bottom"       data-tooltip="View Project" ><i class="fas fa-link"></i></a>
+                            
+                            {{else}}
+                            <a  class=" left tooltipped" data-position="bottom" data-tooltip="Project not hosted" ><i class="fas fa-ban"></i></a>
+                            
+                            {{/if}}
+
+                                
+                            
+                                                            
+                                <a class="right tooltipped" data-position="bottom" data-tooltip="Source code" target="_blank" href="{{this.source}}"><i class="far fa-file-code"></i></a>
                         </div>
                       </div>
                       <br>
@@ -76,6 +86,7 @@
 
 
     </section>
+    
     <div class="row center">
         <h4>Badge(s)</h4>
         <hr style="width:50%;">
@@ -112,7 +123,7 @@
                     <a href="mailto:baloyi.trev@gmail.com" target="_top"><i class="fas fa-at"></i></a>
                     <a href="https://github.com/vtrev" target="_blank"><i class="fab fa-github"></i></a>
                     <a href="https://twitter.com/vusi_trev" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.linkedin.com/in/vusi-baloyi-733b05172/" target="_blank"><i
+                    <a href="https://www.linkedin.com/in/vusi/" target="_blank"><i
                             class="fab fa-linkedin"></i></a>
                     
                 </div>
