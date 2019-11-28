@@ -33,30 +33,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // footer carousel
-    var elems = document.querySelector('#footer-carousel');
-    var instances = M.Carousel.init(elems, {
-        dist: 0,
-        padding: 50,
-        duration: 10000,
-        numVisible: 4,
+    let footerCarousel = document.querySelector('#footer-carousel');
+    var instances = M.Carousel.init(footerCarousel, {
+        dist:-100,
+        padding: 180,
+        duration: 8000,
+        numVisible: 3,
         onCycleTo:()=>{
-            let carousel = document.getElementById('footer-carousel');
-            instance = M.Carousel.getInstance(carousel);
-            instance.next(4); 
+            M.Carousel.getInstance(footerCarousel).next(4); 
         }
+
+
     });
-
-    var slideFooterCarousel = () => {
-        // let carousel = document.getElementById('footer-carousel');
-        // instance = M.Carousel.getInstance(carousel);
-        // instance.next();
-        // setTimeout(slideFooterCarousel, 100);
-    }
-    // slideFooterCarousel();
-
     //  non materialize js
     
-    
+
     //code that pulls repos from github
     let fetchRepos = async () => {
         let response = await fetch('https://api.github.com/users/vtrev/repos?per_page=100');
