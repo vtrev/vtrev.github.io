@@ -37,17 +37,22 @@ document.addEventListener('DOMContentLoaded', function () {
     var instances = M.Carousel.init(elems, {
         dist: 0,
         padding: 50,
-        duration: 1500,
-        numVisible: 3
+        duration: 10000,
+        numVisible: 4,
+        onCycleTo:()=>{
+            let carousel = document.getElementById('footer-carousel');
+            instance = M.Carousel.getInstance(carousel);
+            instance.next(4); 
+        }
     });
 
     var slideFooterCarousel = () => {
-        let carousel = document.getElementById('footer-carousel');
-        instance = M.Carousel.getInstance(carousel);
-        instance.next();
-        setTimeout(slideFooterCarousel, 2000);
+        // let carousel = document.getElementById('footer-carousel');
+        // instance = M.Carousel.getInstance(carousel);
+        // instance.next();
+        // setTimeout(slideFooterCarousel, 100);
     }
-    slideFooterCarousel();
+    // slideFooterCarousel();
 
     //  non materialize js
     
