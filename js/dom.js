@@ -52,7 +52,8 @@ document.addEventListener('DOMContentLoaded', function () {
             "shoe-store": "https://vtrev-shoesapi.herokuapp.com/",
             "settings-bill-expressjs": "https://vtrev-settings-bill.herokuapp.com/",
             "registrations-webapp": "https://vtrev-registrations.herokuapp.com/",
-            "greetings-webapp": "https://vtrev-greetings.herokuapp.com/"
+            "greetings-webapp": "https://vtrev-greetings.herokuapp.com/",
+            "expansiorwebsite":"https://expansior.co.za/"
         }
 
         repos.filter((repo) => {
