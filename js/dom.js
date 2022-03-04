@@ -85,7 +85,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     // create links for projects on Heroku
                     let herokuKeys = Object.keys(herokuLinks);
                     herokuKeys.filter((repoName) => {
-                        console.log(repoName,repo.name); //quick check
                         if (repoName == repo.name) {
                             tmpRepo.link = herokuLinks[repoName];
                             tmpRepo.hosted = true;
