@@ -24,14 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
     generateFooterSliderContent({
         techList
     });
-
-    // materialize js
-
-    //tooltips
-
     
-
-
     // footer carousel
     let footerCarousel = document.querySelector('#footer-carousel');
     var instances = M.Carousel.init(footerCarousel, {
@@ -46,8 +39,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     });
     //  non materialize js
-    
-
     //code that pulls repos from github
     let fetchRepos = async () => {
         let response = await fetch('https://api.github.com/users/vtrev/repos?per_page=100');
