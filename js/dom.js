@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
         footerCarouselElement.innerHTML = footerTechTemplate(techList);
     };
     let techList = ["htmlcssjs", 'express', 'git', 'hb', 'heroku', "linux", 'nodejs', 'pg', 'rest', 'travis'];
-    // let techList = ['heroku', 'css', 'express', 'git', 'travis', 'pg'];
     let populateProjects = (projects) => {
         let projectsData = {
             projects
@@ -76,7 +75,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         return;
                     }
                     //create links for the repos on gh-pages
-                    if (repo.default_branch == "gh-pages") {
+                    //to-do find a way to cater for all non gh-pages default branches that are hosted 
+                    if (repo.default_branch == "gh-pages" || repo.default_branch == "stockman-ts") {
                         tmpRepo.link = `https://vtrev.github.io/${repo.name}`;
                         tmpRepo.hosted = true;
                         projects.push(tmpRepo);
